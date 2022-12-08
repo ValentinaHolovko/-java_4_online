@@ -1,2 +1,0 @@
-Main-Class: ua.com.alevel.Series
-Class-Path: json-simple-1.1.1.jar
