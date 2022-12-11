@@ -4,37 +4,37 @@ echo 'run level 1'
 
 echo 'run simple'
 cd ./level_1/simple
-javac Hello.java
-java Hello
+javac Series.java
+java Series
 
 cd ../
 
 echo 'run package'
 cd ./package
-javac ua/com/alevel/Hello.java
-java ua.com.alevel.Hello
+javac ua/com/alevel/Series.java
+java ua.com.alevel.Series
 
 cd ../
 
 echo 'run separate packages'
 cd ./separate_packages
-javac ua/com/alevel/Hello.java
-java ua.com.alevel.Hello
+javac ua/com/alevel/Series.java
+java ua.com.alevel.Series
 
 cd ../
 
 echo 'run minimal proj'
 cd ./minimal_proj
-javac -sourcepath ./src -d build/classes ./src/ua/com/alevel/Hello.java
-java -cp build/classes ua.com.alevel.Hello
+javac -sourcepath ./src -d build/classes ./src/ua/com/alevel/Series.java
+java -cp build/classes ua.com.alevel.Series
 
 cd ../
 
 echo 'run med proj and create simple jar'
 cd ./med_proj
-javac -sourcepath ./src -d build/classes ./src/ua/com/alevel/Hello.java
-jar cvfm build/jar/hello.jar resources/MANIFEST.MF -C build/classes .
-java -jar build/jar/hello.jar
+javac -sourcepath ./src -d build/classes ./src/ua/com/alevel/Series.java
+jar cvfm build/jar/series.jar resources/MANIFEST.MF -C build/classes .
+java -jar build/jar/series.jar
 
 cd ../../
 
