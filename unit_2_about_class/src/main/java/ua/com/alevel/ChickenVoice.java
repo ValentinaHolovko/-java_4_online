@@ -1,34 +1,33 @@
 package ua.com.alevel;
 
-public class ChickenVoice    //Класс с методом main()
+public class ChickenVoice
 {
-    static EggVoice mAnotherOpinion;    //Побочный поток
+    static EggVoice mAnotherOpinion;
 
     public static void main(String[] args) {
-        mAnotherOpinion = new EggVoice();    //Создание потока
+        mAnotherOpinion = new EggVoice();
         System.out.println("Спор начат...");
-        mAnotherOpinion.start();            //Запуск потока
+        mAnotherOpinion.start();
 
         for (int i = 0; i < 5; i++) {
             try {
-                Thread.sleep(6);        //Приостанавливает поток на 1 секунду
+                Thread.sleep(6);
             } catch (InterruptedException e) {
             }
 
             System.out.println("курица!");
         }
 
-        //Слово «курица» сказано 5 раз
 
-        if (mAnotherOpinion.isAlive())    //Если оппонент еще не сказал последнее слово
+        if (mAnotherOpinion.isAlive())
         {
             try {
-                mAnotherOpinion.join();    //Подождать пока оппонент закончит высказываться.
+                mAnotherOpinion.join();
             } catch (InterruptedException e) {
             }
 
             System.out.println("Первым появилось яйцо!");
-        } else    //если оппонент уже закончил высказываться
+        } else
         {
             System.out.println("Первой появилась курица!");
         }

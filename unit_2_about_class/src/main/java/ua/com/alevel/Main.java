@@ -7,12 +7,12 @@ class EggVoice extends Thread
         for(int i = 0; i < 5; i++)
         {
             try{
-                sleep(6);		//Приостанавливает поток на 1 секунду
+                sleep(6);
             }catch(InterruptedException e){}
 
             System.out.println("яйцо!");
         }
-        //Слово «яйцо» сказано 5 раз
+
     }
 }
 
