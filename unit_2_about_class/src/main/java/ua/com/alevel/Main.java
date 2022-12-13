@@ -1,7 +1,18 @@
 package ua.com.alevel;
+class EggVoice extends Thread
+{
+    @Override
+    public void run()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            try{
+                sleep(6);		//Приостанавливает поток на 1 секунду
+            }catch(InterruptedException e){}
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+            System.out.println("яйцо!");
+        }
+        //Слово «яйцо» сказано 5 раз
     }
 }
+
