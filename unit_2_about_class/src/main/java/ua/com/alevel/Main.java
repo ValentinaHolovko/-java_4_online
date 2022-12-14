@@ -26,7 +26,6 @@ public class Main {
             System.out.println(
                     "hw = " + hw[i].name + " " + hw[i].isStupid
             );
-
         }
     }
 }

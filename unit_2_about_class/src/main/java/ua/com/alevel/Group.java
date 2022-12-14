@@ -10,7 +10,5 @@ public class Group {
             System.out.println("message = " + message + " is done");
 
         }
-
     }
-
-}
+        }
