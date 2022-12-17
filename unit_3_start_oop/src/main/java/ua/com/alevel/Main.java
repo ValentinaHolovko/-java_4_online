@@ -19,7 +19,7 @@ public class Main {
             while (matcher.find()) {
                 sum += Integer.parseInt(matcher.group());
             }
-            System.out.println("Сума доданків");
+            System.out.println("Сума доданків:");
             System.out.println(sum);
 
         }
