@@ -58,7 +58,7 @@ public class Main {
         for (int i = 2; i < hw.length; i++) {
             System.out.println(
                     "hw = " + hw[i].name + " " + hw[i].isStupid);
-    }
+        }
         for (int i = 3; i < hw.length; i++) {
             hw[i] = new Group();
             hw[i].name = String.valueOf(i);
@@ -74,7 +74,7 @@ public class Main {
         for (int i = 3; i < hw.length; i++) {
             System.out.println(
                     "hw = " + hw[i].name + " " + hw[i].isStupid);
-}
+        }
         for (int i = 4; i < hw.length; i++) {
             hw[i] = new Group();
             hw[i].name = String.valueOf(i);
@@ -90,7 +90,8 @@ public class Main {
         for (int i = 4; i < hw.length; i++) {
             System.out.println(
                     "hw = " + hw[i].name + " " + hw[i].isStupid);
-}        for (int i = 5; i < hw.length; i++) {
+        }
+        for (int i = 5; i < hw.length; i++) {
             hw[i] = new Group();
             hw[i].name = String.valueOf(i);
             random = new Random();
@@ -105,4 +106,6 @@ public class Main {
         for (int i = 5; i < hw.length; i++) {
             System.out.println(
                     "hw = " + hw[i].name + " " + hw[i].isStupid);
-    }}}
+        }
+    }
+}
