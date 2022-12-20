@@ -1,16 +1,20 @@
 package ua.com.alevel;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 
 public class Chars {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void main(String[] args) throws IOException {
+        BufferedReader isolate = new BufferedReader(new InputStreamReader(System.in));
+        DataInputStream in = new DataInputStream(System.in);
         while ( true ) {
             System.out.print("String: ");
-            String str = scanner.nextLine();
+            String str = in.readLine();
             if ( "".equals(str) )
                 break;
 
