@@ -21,7 +21,6 @@ public class Chars {
             Map<Character, Integer> map = new TreeMap<>();
             for ( char c : str.toCharArray() )
                 map.put(c, ( map.containsKey(c) ) ? map.get(c) + 1 : 1);
-
             StringBuilder sb = new StringBuilder();
             for ( char c : map.keySet() )
                 sb.append(c);
