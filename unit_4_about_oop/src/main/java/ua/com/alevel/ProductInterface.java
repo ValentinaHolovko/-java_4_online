@@ -19,8 +19,8 @@ public class ProductInterface {
     private static void menu() {
         System.out.println();
         System.out.println("1. If you would like to add a product name, please enter - 1");
-        System.out.println("2. If you want find product, please enter name or id - 2");
-        System.out.println("3. If you want delete product, please enter name or id - 3");
+        System.out.println("2. If you want find product, please enter name - 2");
+        System.out.println("3. If you want delete product, please enter name - 3");
         System.out.println("4. If you want find all product, please enter - 4 ");
         System.out.println("5. If you want close application, please enter -5");
         System.out.println();
