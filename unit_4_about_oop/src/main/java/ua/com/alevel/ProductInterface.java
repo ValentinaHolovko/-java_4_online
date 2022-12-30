@@ -18,11 +18,11 @@ public class ProductInterface {
 
     private static void menu() {
         System.out.println();
-        System.out.println("1. If you want create product, please enter");
-        System.out.println("2. If you want find product, please enter");
-        System.out.println("3. If you want delete product, please enter");
-        System.out.println("4. If you want find all product, please enter");
-        System.out.println("5. If you want close application, please enter");
+        System.out.println("1. If you would like to add a product name, please enter - 1");
+        System.out.println("2. If you want find product, please enter name or id - 2");
+        System.out.println("3. If you want delete product, please enter name or id - 3");
+        System.out.println("4. If you want find all product, please enter - 4 ");
+        System.out.println("5. If you want close application, please enter -5");
         System.out.println();
     }
 
@@ -49,13 +49,13 @@ public class ProductInterface {
 
     private static void create(BufferedReader reader) throws IOException {
         System.out.println("to add a new product.");
-        System.out.println("Please enter product id");
+        System.out.println("Please enter product id.");
         String id = reader.readLine();
-        System.out.println("Please enter product name");
+        System.out.println("Please enter product name.");
         String name = reader.readLine();
-        System.out.println("Please enter product price");
+        System.out.println("Please enter product price.");
         String price = reader.readLine();
-        System.out.println("Please enter product country");
+        System.out.println("Please enter country of origin.");
         String country = reader.readLine();
         Product product = new Product();
         product.setId(id);
