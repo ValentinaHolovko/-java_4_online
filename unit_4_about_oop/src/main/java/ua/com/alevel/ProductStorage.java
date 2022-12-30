@@ -1,7 +1,7 @@
 package ua.com.alevel;
 
 public class ProductStorage {
-    private static int i = 2 ;
+    private static int i = 1 ;
     private static int count = 0;
     private static Product[] productsArray = new Product[i];
 
