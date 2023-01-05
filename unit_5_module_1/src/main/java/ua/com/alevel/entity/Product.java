@@ -7,7 +7,13 @@ public class Product extends BaseEntity{
     private String price;
     private String country;
 
+    public String[] getProductIdList() {
+        return productIdList;
+    }
 
+    public void setProductIdList(String[] carIdList) {
+        this.productIdList = carIdList;
+    }
 
     public String getProductName() {
         return productName;

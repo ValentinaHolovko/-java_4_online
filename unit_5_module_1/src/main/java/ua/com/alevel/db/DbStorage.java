@@ -8,8 +8,8 @@ import java.util.UUID;
 public class DbStorage {
 
 
-    private static Product[] products = new Product[5];
-    private static Shoop[] shoops = new Shoop[5];
+    private static Product[] products = new Product[10];
+    private static Shoop[] shoops = new Shoop[6];
     private static Product[] productsArray;
     private static Shoop[] shoopsArray;
 
@@ -82,7 +82,7 @@ public class DbStorage {
     public static void deleteProduct(String id) {
         for (int i = 0; i < products.length; i++) {
             if (products[i] != null) {
-                if (products[i].getProductName().equals(id)) {
+                if (products[i].getId().equals(id)) {
                     products[i] = null;
                     return;
 }
@@ -94,7 +94,7 @@ public class DbStorage {
     public static void deleteShoop(String id) {
         for (int i = 0; i < shoops.length; i++) {
             if (shoops[i] != null) {
-                if (shoops[i].getShoopName().equals(id)) {
+                if (shoops[i].getId().equals(id)) {
                     shoops[i] = null;
                     return;
 }
@@ -117,23 +117,21 @@ public static Product getProduct(String id) {
     public static void attach(String productId, String shoopId) {
 
         attachProductToShoop(productId, shoopId);
-        attachShoopToProduct(productId, shoopId);
+        attachProductToShoop(productId, shoopId);
     }
 
     private static void attachProductToShoop(String productId, String shoopId) {
         Shoop shoop = getShoop(shoopId);
         String products = shoop.getId();
-        products = addUniqueElementToArray(new String[]{products}, productId);
+        products = addProductToShoop(new String[]{products}, productId);
         shoop.setId(Arrays.toString(products.toCharArray()));
-    }
-
-    private static void attachShoopToProduct(String productId, String shoopId) {
         Product product = getProduct(productId);
         String shoops = product.getId();
-        shoops = addUniqueElementToArray(new String[]{shoops}, shoopId);
+        shoops = addProductToShoop(new String[]{shoops}, shoopId);
         product.setId(Arrays.toString(shoops.toCharArray()));
     }
-    private static String addUniqueElementToArray(String[] array, String element) {
+
+    private static String addProductToShoop(String[] array, String element) {
         int emptyIndex = -1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null) {
@@ -170,4 +168,25 @@ public static Shoop getShoop(String id) {
     public static Shoop[] getShoop() {
 
         return shoops;
-    }}
+    }
+
+    public static void deleteProductToShoop(String productId, String shoopId) {
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] != null) {
+                if (products[i].getId().equals(productId)) {
+                    products[i] = null;
+                    for (i = 0; i < shoops.length; i++) {
+                        if (shoops[i] != null) {
+                            if (shoops[i].getId().equals(shoopId)) {
+                                shoops[i] = null;
+                                return;
+                            }
+
+                        }
+                    }
+                    System.out.println("Wrong id");
+                }
+            }}}
+    public static void addProductToShoop(String shoopId, String productId) {
+    }
+}

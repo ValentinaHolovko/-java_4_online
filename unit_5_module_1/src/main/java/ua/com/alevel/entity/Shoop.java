@@ -6,7 +6,13 @@ public class Shoop extends BaseEntity {
     private String shoopName;
     private String country;
 
+    public String[] getShoopIdList() {
+        return shoopIdList;
+    }
 
+    public void setShoopIdList(String[] shoopIdList) {
+        this.shoopIdList = shoopIdList;
+    }
 
     public String getShoopName() {
         return shoopName;

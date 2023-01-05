@@ -31,7 +31,7 @@ public class ProducShooptInterface {
         System.out.println("5.If You want to update a product, please enter 5");
         System.out.println("6. If You want to update a shoop, please enter 6");
         System.out.println("7. If You want to attach a product to the car, please enter 7");
-        System.out.println("8. If You want to attach a shoop to the client, please enter 8");
+        System.out.println("8. If You want to delete Product to Shoop 8");
         System.out.println("9. If you want delete product, please enter name - 9");
         System.out.println("10. If you want delete shoop, please enter name - 10");
         System.out.println("11. If you want find all product and product, please enter - 11");
@@ -49,7 +49,7 @@ public class ProducShooptInterface {
             case "5" : updateProduct(reader);break;
             case "6" : updateShoop(reader);break;
             case "7" : attachProductToShoop(reader);break;
-            case "8" : attachShoopToProduct(reader);break;
+            case "8" : deleteProductToShoop(reader);break;
             case "9" : deleteProduct(reader); break;
             case "10" : deleteShoop(reader); break;
             case "11" : findAllProduct(); break;
@@ -106,12 +106,15 @@ public class ProducShooptInterface {
                 if(product == null){
                     System.out.println("This product does not exist.");
                 } else {
-                    System.out.println("Please enter product's first name:");
-                    String firstName = reader.readLine();
-                    product.setProductName(firstName);
-                    System.out.println("Please enter product's last name:");
-                    String lastName = reader.readLine();
-                    product .setProductName(lastName);
+                    System.out.println("Please enter product's new name:");
+                    String productName = reader.readLine();
+                    product.setProductName(productName);
+                    System.out.println("Please enter product's price:");
+                    String price = reader.readLine();
+                    product.setPrice(price);
+                    System.out.println("Please enter product's country:");
+                    String country = reader.readLine();
+                    product.setCountry(country);
                     System.out.println("Thank you, the product's information is updated.");
                 }
             }
@@ -122,39 +125,32 @@ public class ProducShooptInterface {
                 if(shoop == null){
                     System.out.println("This shoop does not exist.");
                 } else {
-                    System.out.println("Please enter shoop's number:");
-                    String firstName = reader.readLine();
-                    shoop.setShoopName(firstName);
-                    System.out.println("Please enter shoop's model:");
-                    String lastName = reader.readLine();
-                    shoop.setShoopName(lastName);
+                    System.out.println("Please enter shoop's name:");
+                    String shoopName = reader.readLine();
+                    shoop.setShoopName(shoopName);
+                    System.out.println("Please enter product's country:");
+                    String country = reader.readLine();
+                    shoop.setCountry(country);
                     System.out.println("Thank you, the shoop's information is updated.");
                 }
             }
     private static void attachProductToShoop(BufferedReader reader) throws IOException {
-        System.out.println("Let's attach the product to shoop. To start, please enter product's ID:");
+        System.out.println("Attach product to shoop");
+        System.out.println("Please enter shoop id");
         String productId = reader.readLine();
-        System.out.println("Then please enter shoop's ID:");
+        System.out.println("Please enter product id");
         String shoopId = reader.readLine();
-        if (productId == null || shoopId == null) {
-            System.out.println("This ID does not exist.");
-        } else {
-            DbStorage.attach(productId, shoopId);
-            System.out.println("Attachment is successful.");
+        DbStorage.addProductToShoop(shoopId, productId);
         }
-    }
-    private static void attachShoopToProduct(BufferedReader reader) throws IOException {
-        System.out.println("Let's attach the shoop to product. To start, please enter shoop's ID:");
+    private static void deleteProductToShoop(BufferedReader reader) throws IOException {
+        System.out.println("Delete product to shoop");
+        System.out.println("Please enter shoop id");
         String shoopId = reader.readLine();
-        System.out.println("Then please enter product's ID:");
+        System.out.println("Please enter product id");
         String productId = reader.readLine();
-        if (productId == null || shoopId == null) {
-            System.out.println("This ID does not exist.");
-        } else {
-            DbStorage.attach(productId, shoopId);
-            System.out.println("Attachment is successful.");
-        }
+        DbStorage.deleteProductToShoop(productId, shoopId);
     }
+
     private static void deleteProduct(BufferedReader reader) throws IOException {
         System.out.println("Delete by product id");
         String id = reader.readLine();
