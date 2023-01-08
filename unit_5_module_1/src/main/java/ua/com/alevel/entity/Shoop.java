@@ -1,6 +1,7 @@
 package ua.com.alevel.entity;
 
 public class Shoop extends BaseEntity {
+
     private static Shoop[] shoopsArray = new Shoop[10];
     private String[] shoopIdList = new String[10];
     private String shoopName;
@@ -19,7 +20,6 @@ public class Shoop extends BaseEntity {
     }
 
     public void setShoopName(String shoopName) {
-
         if (shoopName.matches(".*\\d.*")) {
             System.out.println("Incorrect introduction of the name");
         } else {
@@ -36,10 +36,10 @@ public class Shoop extends BaseEntity {
         if (country.matches(".*\\d.*")) {
             System.out.println("Incorrect introduction of the name");
         } else {
-        this.country = country;
+            this.country = country;
+        }
     }
 
-}
     @Override
     public String toString() {
         return "Shoop{" +

@@ -5,8 +5,8 @@ import ua.com.alevel.entity.Shoop;
 
 import java.util.Arrays;
 import java.util.UUID;
-public class DbStorage {
 
+public class DbStorage {
 
     private static Product[] products = new Product[10];
     private static Shoop[] shoops = new Shoop[6];
@@ -119,7 +119,6 @@ public class DbStorage {
 
     public static void attach(String productId, String shoopId) {
         attachShoopToProduct(productId, shoopId);
-
     }
 
     private static void attachShoopToProduct(String shoopId, String productId) {
@@ -129,9 +128,6 @@ public class DbStorage {
         shoop.setShoopIdList(products);
     }
 
-
-
-
     private static String[] addUniqueShoopToProduct(String[] array, String element) {
         int emptyIndex = -1;
         for (int i = 0; i < array.length; i++) {
@@ -139,12 +135,12 @@ public class DbStorage {
                 if (array[i].equals(element)) {
                     return array;
                 }
-            } else if(emptyIndex == -1){
+            } else if (emptyIndex == -1) {
                 emptyIndex = i;
             }
         }
 
-        if(emptyIndex == -1) {
+        if (emptyIndex == -1) {
             String[] temp = Arrays.copyOf(array, array.length + 0);
             array = temp;
         }
@@ -152,24 +148,22 @@ public class DbStorage {
         return array;
     }
 
-
     public static Shoop getShoop(String id) {
-                    for (int i = 0; i < shoops.length; i++) {
-                        if (shoops[i] != null) {
-                            if (shoops[i].getId().equals(id)) {
-                                return shoops[i];
-                                  }
-                        }
-                    }
-                    return null;
+        for (int i = 0; i < shoops.length; i++) {
+            if (shoops[i] != null) {
+                if (shoops[i].getId().equals(id)) {
+                    return shoops[i];
+                }
+            }
+        }
+        return null;
     }
 
     public static Product[] getProduct() {
-
         return products;
     }
-    public static Shoop[] getShoop() {
 
+    public static Shoop[] getShoop() {
         return shoops;
     }
 
@@ -189,6 +183,7 @@ public class DbStorage {
                     }
                     System.out.println("Wrong id");
                 }
-            }}
+            }
+        }
     }
 }

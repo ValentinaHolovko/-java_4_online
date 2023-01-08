@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class ProductInterface {
+
     public static void start() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Select your options");
@@ -72,20 +73,21 @@ public class ProductInterface {
         System.out.println("product = " + product);
 
     }
-        private static void deleteName(BufferedReader reader) throws IOException {
-            System.out.println("Delete by product name");
-            String name = reader.readLine();
-            ProductStorage.deleteProduct(name);
 
-
-        }
-        private static void findAll() {
-            System.out.println("Find all product");
-            Product[] products = ProductStorage.getProduct();
-            System.out.println("products = " + Arrays.toString(products));
-        }
-        private static void exit() {
-            System.exit(0);
-
-        }
+    private static void deleteName(BufferedReader reader) throws IOException {
+        System.out.println("Delete by product name");
+        String name = reader.readLine();
+        ProductStorage.deleteProduct(name);
     }
+
+    private static void findAll() {
+        System.out.println("Find all product");
+        Product[] products = ProductStorage.getProduct();
+        System.out.println("products = " + Arrays.toString(products));
+    }
+
+    private static void exit() {
+        System.exit(0);
+
+    }
+}

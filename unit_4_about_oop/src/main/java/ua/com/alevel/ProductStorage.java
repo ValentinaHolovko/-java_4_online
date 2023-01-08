@@ -1,16 +1,15 @@
 package ua.com.alevel;
 
 public class ProductStorage {
-    private static int i = 1 ;
+
+    private static int i = 1;
     private static int count = 0;
     private static Product[] productsArray = new Product[i];
 
-
-    private ProductStorage() {
-    }
+    private ProductStorage() {}
 
     public static Product[] getProduct() {
-        return productsArray ;
+        return productsArray;
     }
 
     public static void addProduct(Product product) {
@@ -29,25 +28,27 @@ public class ProductStorage {
 
         }
     }
+
     public static void deleteProduct(String name) {
         for (int i = 0; i < productsArray.length; i++) {
             if (productsArray[i] != null) {
                 if (productsArray[i].getProductName().equals(name)) {
                     productsArray[i] = null;
                     return;
-}
-
+                }
             }
         }
         System.out.println("Wrong Name");
     }
-public static Product getProduct(String name) {
-                    for (int i = 0; i < productsArray.length; i++) {
-                        if (productsArray[i] != null) {
-                            if (productsArray[i].getProductName().equals(name)) {
-                                return productsArray[i];
-                                  }
-                        }
-                    }
-                    return null;
-    }}
+
+    public static Product getProduct(String name) {
+        for (Product product : productsArray) {
+            if (product != null) {
+                if (product.getProductName().equals(name)) {
+                    return product;
+                }
+            }
+        }
+        return null;
+    }
+}

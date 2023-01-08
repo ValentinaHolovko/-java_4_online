@@ -1,6 +1,7 @@
 package ua.com.alevel;
-import java.lang.*;
+
 public class Product {
+
     private String id;
     private String productName;
     private String price;
@@ -20,12 +21,12 @@ public class Product {
 
     public void setProductName(String productName) {
         if (productName.matches(".*\\d.*")) {
-        System.out.println("Incorrect introduction of the name");
-    } else {
-        this.productName = productName;
+            System.out.println("Incorrect introduction of the name");
+        } else {
+            this.productName = productName;
+        }
     }
 
-}
     public String getPrice() {
         return price;
     }

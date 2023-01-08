@@ -9,9 +9,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-
-
 public class ProducShooptInterface {
+
     public static void start() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Select your options");
@@ -179,41 +178,43 @@ public class ProducShooptInterface {
 
 
     }
-        private static void deleteProductToShoop (BufferedReader reader) throws IOException {
-            System.out.println("Delete product to shoop");
-            System.out.println("Please enter shoop id");
-            String shoopId = reader.readLine();
-            System.out.println("Please enter product id");
-            String productId = reader.readLine();
-            DbStorage.deleteProductToShoop(productId, shoopId);
-        }
 
-        private static void deleteProduct (BufferedReader reader) throws IOException {
-            System.out.println("Delete by product id");
-            String id = reader.readLine();
-            DbStorage.deleteProduct(id);
-        }
-        private static void deleteShoop (BufferedReader reader) throws IOException {
-            System.out.println("Delete by shoop id");
-            String id = reader.readLine();
-            DbStorage.deleteShoop(id);
-        }
-
-
-        private static void findAllProduct () {
-            System.out.println("Find all product");
-            Product[] products = DbStorage.getProduct();
-            System.out.println(Arrays.toString(products));
-        }
-        private static void findAllShoop () {
-            System.out.println("Find all shoop");
-            Shoop[] shoops = DbStorage.getShoop();
-            System.out.println(Arrays.toString(shoops));
-
-        }
-
-        private static void exit () {
-            System.exit(0);
-
-        }
+    private static void deleteProductToShoop(BufferedReader reader) throws IOException {
+        System.out.println("Delete product to shoop");
+        System.out.println("Please enter shoop id");
+        String shoopId = reader.readLine();
+        System.out.println("Please enter product id");
+        String productId = reader.readLine();
+        DbStorage.deleteProductToShoop(productId, shoopId);
     }
+
+    private static void deleteProduct(BufferedReader reader) throws IOException {
+        System.out.println("Delete by product id");
+        String id = reader.readLine();
+        DbStorage.deleteProduct(id);
+    }
+
+    private static void deleteShoop(BufferedReader reader) throws IOException {
+        System.out.println("Delete by shoop id");
+        String id = reader.readLine();
+        DbStorage.deleteShoop(id);
+    }
+
+
+    private static void findAllProduct() {
+        System.out.println("Find all product");
+        Product[] products = DbStorage.getProduct();
+        System.out.println(Arrays.toString(products));
+    }
+
+    private static void findAllShoop() {
+        System.out.println("Find all shoop");
+        Shoop[] shoops = DbStorage.getShoop();
+        System.out.println(Arrays.toString(shoops));
+
+    }
+
+    private static void exit() {
+        System.exit(0);
+    }
+}

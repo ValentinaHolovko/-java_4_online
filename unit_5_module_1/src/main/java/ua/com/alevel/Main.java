@@ -3,9 +3,8 @@ package ua.com.alevel;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
 
-       ProducShooptInterface producShooptInterface = new ProducShooptInterface();
+    public static void main(String[] args) throws IOException {
         ProducShooptInterface.start();
     }
 }
