@@ -119,7 +119,7 @@ public class DbStorage {
 
     public static void attach(String productId, String shoopId) {
         attachShoopToProduct(productId, shoopId);
-        attachProductToShoop(productId, shoopId);
+
     }
 
     private static void attachShoopToProduct(String shoopId, String productId) {
@@ -130,12 +130,7 @@ public class DbStorage {
     }
 
 
-    private static void attachProductToShoop(String shoopId, String productId) {
-        Product product = getProduct(productId);
-        String[] shoops = product.getProductIdList();
-        shoops = addUniqueShoopToProduct(shoops, productId);
-        product.setProductIdList(shoops);
-    }
+
 
     private static String[] addUniqueShoopToProduct(String[] array, String element) {
         int emptyIndex = -1;

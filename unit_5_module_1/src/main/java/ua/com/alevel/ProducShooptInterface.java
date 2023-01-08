@@ -64,24 +64,21 @@ public class ProducShooptInterface {
                 attachShoopToProduct(reader);
                 break;
             case "8":
-                attachProductToShoop(reader);
-                break;
-            case "9":
                 deleteProductToShoop(reader);
                 break;
-            case "10":
+            case "9":
                 deleteProduct(reader);
                 break;
-            case "11":
+            case "10":
                 deleteShoop(reader);
                 break;
-            case "12":
+            case "11":
                 findAllProduct();
                 break;
-            case "13":
+            case "12":
                 findAllShoop();
                 break;
-            case "14":
+            case "13":
                 exit();
                 break;
             default:
@@ -179,19 +176,7 @@ public class ProducShooptInterface {
             DbStorage.attach(productId, shoopId);
             System.out.println("Attachment is successful.");
         }
-    }
 
-    private static void attachProductToShoop(BufferedReader reader) throws IOException {
-        System.out.println("Let's attach the shoop to product. To start, please enter product's ID:");
-        String shoopId = reader.readLine();
-        System.out.println("Then please enter shoop's ID:");
-        String productId = reader.readLine();
-        if (productId == null || shoopId == null) {
-            System.out.println("This ID does not exist.");
-        } else {
-            DbStorage.attach(productId, shoopId);
-            System.out.println("Attachment is successful.");
-        }
 
     }
         private static void deleteProductToShoop (BufferedReader reader) throws IOException {

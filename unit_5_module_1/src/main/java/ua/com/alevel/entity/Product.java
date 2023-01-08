@@ -32,17 +32,23 @@ public class Product extends BaseEntity{
     }
 
     public void setPrice(String price) {
-        this.price = price;
-    }
 
+            this.price = price;
+        }
     public String getCountry() {
         return country;
     }
 
 
-    public void setCountry(String country) {
+    public void setCountry(String country)    {
+
+        if (country.matches(".*\\d.*")) {
+        System.out.println("Incorrect introduction of the name");
+    } else {
         this.country = country;
     }
+
+}
 
     @Override
     public String toString() {

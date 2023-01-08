@@ -19,7 +19,13 @@ public class Shoop extends BaseEntity {
     }
 
     public void setShoopName(String shoopName) {
-        this.shoopName = shoopName;
+
+        if (shoopName.matches(".*\\d.*")) {
+            System.out.println("Incorrect introduction of the name");
+        } else {
+            this.shoopName = shoopName;
+        }
+
     }
 
     public String getCountry() {
@@ -27,9 +33,13 @@ public class Shoop extends BaseEntity {
     }
 
     public void setCountry(String country) {
+        if (country.matches(".*\\d.*")) {
+            System.out.println("Incorrect introduction of the name");
+        } else {
         this.country = country;
     }
 
+}
     @Override
     public String toString() {
         return "Shoop{" +
