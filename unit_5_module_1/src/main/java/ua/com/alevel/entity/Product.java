@@ -21,7 +21,7 @@ public class Product extends BaseEntity{
 
     public void setProductName(String productName) {
         if (productName.matches(".*\\d.*")) {
-            System.out.println("Incorrect introduction of the name");
+            System.out.println("Incorrect introduction of the product name");
         } else {
             this.productName = productName;
         }
@@ -43,7 +43,7 @@ public class Product extends BaseEntity{
     public void setCountry(String country)    {
 
         if (country.matches(".*\\d.*")) {
-        System.out.println("Incorrect introduction of the name");
+        System.out.println("Incorrect introduction of the country");
     } else {
         this.country = country;
     }
