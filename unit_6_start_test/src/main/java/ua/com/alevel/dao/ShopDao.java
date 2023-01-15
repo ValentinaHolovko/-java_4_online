@@ -17,5 +17,7 @@ public interface ShopDao {
 
     List<Shop> findAll();
 
-    void attach(String customerId, String shopId);
+    void attachCustomer(String customerId, String shopId);
+
+    void attachShop(String customerId, String shopId);
 }

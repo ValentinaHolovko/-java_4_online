@@ -37,7 +37,12 @@ public class ShopDaoImpl implements ShopDao {
     }
 
     @Override
-    public void attach(String customerId, String shopId) {
+    public void attachCustomer(String customerId, String shopId) {
+        dbStorage.attach(customerId, shopId);
+    }
+
+    @Override
+    public void attachShop(String customerId, String shopId) {
         dbStorage.attach(customerId, shopId);
     }
 }

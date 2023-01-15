@@ -93,7 +93,8 @@ public class СustomerController {
         Сustomer сustomer = new Сustomer();
         сustomer.setName(Name);
         сustomer.setPhone(phone);
-        сustomerService.create(сustomer);
+        сustomerService.createName(сustomer);
+        сustomerService.createPhone(сustomer);
     }
 
     private void createShop(BufferedReader reader) throws IOException {
@@ -157,8 +158,8 @@ public class СustomerController {
             System.out.println("Please enter сustomer's phone:");
             String phone = reader.readLine();
             сustomer.setPhone(phone);
-
-            сustomerService.update(сustomer);
+            сustomerService.updateName(сustomer);
+            сustomerService.updatePhone(сustomer);
             System.out.println("Thank you, the сustomer's information is updated.");
         }
     }
@@ -185,7 +186,8 @@ public class СustomerController {
         String customerId = reader.readLine();
         System.out.println("Then please enter shop's ID:");
         String shopId = reader.readLine();
-        сustomerService.attach(customerId, shopId);
+        сustomerService.attachCustomer(customerId, shopId);
+        сustomerService.attachShop(customerId, shopId);
 
     }
 

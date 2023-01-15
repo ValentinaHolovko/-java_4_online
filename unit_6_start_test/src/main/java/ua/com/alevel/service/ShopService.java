@@ -31,4 +31,4 @@ public class ShopService {
         return shopDao.findAll();
     }
 
-    }
+}

@@ -80,12 +80,20 @@ public class DbStorage {
 
     public void attach(String customerId, String shopId) {
         attachCustomerToShop(customerId, shopId);
+        attachShopToCustomer(customerId, shopId);
     }
 
     private void attachCustomerToShop(String customerId, String shopId) {
         getShop(shopId).ifPresent(it -> {
             Set<String> customers = it.getCustomerIdList();
             customers.add(customerId);
+        });
+    }
+
+    private void attachShopToCustomer(String customerId, String shopId) {
+        getCustomer(customerId).ifPresent(it -> {
+            Set<String> shops = it.getShopIdList();
+            shops.add(shopId);
         });
     }
 
@@ -118,4 +126,6 @@ public class DbStorage {
             customer.getShopIdList().removeIf(shop -> id.equals(shop));
         });
     }
+
+
 }

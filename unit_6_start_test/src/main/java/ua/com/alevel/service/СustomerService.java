@@ -10,16 +10,32 @@ public class СustomerService {
 
     private СustomerDaoImpl customerDao = new СustomerDaoImpl();
 
-    public String create(Сustomer сustomer) {
-        if (!validateName(сustomer.getName()) || !validatePhone(сustomer.getPhone())) {
+    public String createName(Сustomer сustomer) {
+        if (!validateName(сustomer.getName())) {
             System.out.println("Incorrect information. Name can't contain numbers.");
             return null;
         }
         return customerDao.create(сustomer);
     }
 
-    public void update(Сustomer сustomer) {
-        if (!validateName(сustomer.getName()) || !validatePhone(сustomer.getPhone())) {
+    public String createPhone(Сustomer сustomer) {
+        if (!validatePhone(сustomer.getPhone())) {
+            System.out.println("Wrong information. The phone number must contain only numbers.");
+            return null;
+        }
+        return customerDao.create(сustomer);
+    }
+
+    public void updateName(Сustomer сustomer) {
+        if (!validateName(сustomer.getName())) {
+            System.out.println("Incorrect information. Name can't contain numbers");
+            return;
+        }
+        customerDao.update(сustomer);
+    }
+
+    public void updatePhone(Сustomer сustomer) {
+        if (!validatePhone(сustomer.getPhone())) {
             System.out.println("Wrong information. The phone number must contain only numbers.");
             return;
         }
@@ -39,8 +55,17 @@ public class СustomerService {
         return customerDao.findAll();
     }
 
-    public void attach(String сustomerId, String shopId) {
-        if (сustomerId == null || shopId == null) {
+    public void attachCustomer(String сustomerId, String shopId) {
+        if (сustomerId == null) {
+            System.out.println("This ID does not exist.");
+        } else {
+            customerDao.attach(сustomerId, shopId);
+            System.out.println("Successfully attached.");
+        }
+    }
+
+    public void attachShop(String сustomerId, String shopId) {
+        if (shopId == null) {
             System.out.println("This ID does not exist.");
         } else {
             customerDao.attach(сustomerId, shopId);
@@ -52,6 +77,7 @@ public class СustomerService {
         return name.matches("[A-Za-z]+");
     }
 
-    private boolean validatePhone(String phone) { return phone.matches("^(\\+3)([0-9]{10})$");
+    private boolean validatePhone(String phone) {
+        return phone.matches("^(\\+3)([0-9]{10})$");
     }
 }

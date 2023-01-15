@@ -2,6 +2,7 @@ package ua.com.alevel.service;
 
 import org.junit.jupiter.api.*;
 import ua.com.alevel.entity.Сustomer;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class СustomerServiceTest {
 
@@ -13,16 +14,17 @@ public class СustomerServiceTest {
     @Test
 
     public void testValidationName() {
-        String name = сustomerService.create(Customer(NAME, "[A-Za-z]+"));
-        Assertions.assertNull(name);
+        String id = сustomerService.createName(Customer(NAME, "[A-Za-z]+"));
+        Assertions.assertNull(id);
     }
 
     @Test
     public void testValidationPhone() {
-        String phone = сustomerService.create(Customer(PHONE, "^(\\+3)([0-9]{10})$"));
-        Assertions.assertNull(phone);
+        String id = сustomerService.createPhone(Customer(PHONE, "^(\\+3)([0-9]{10})$"));
+        Assertions.assertNull(id);
     }
-    private Сustomer Customer(String name, String phone) {
+
+    private Сustomer Customer(String phone, String name) {
         Сustomer сustomer = new Сustomer();
         сustomer.setName(name);
         сustomer.setPhone(phone);
