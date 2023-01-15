@@ -20,7 +20,6 @@ public class СustomerController {
     public void start() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Welcome to shop!");
-        System.out.println("Please select your option:");
         String input;
         menu();
         while ((input = reader.readLine()) != null) {
@@ -39,10 +38,9 @@ public class СustomerController {
         System.out.println("If You want to update a customer, please enter 7");
         System.out.println("If You want to update a shop, please enter 8");
         System.out.println("If You want to attach a customer to the shop, please enter 9");
-        System.out.println("If You want to attach a shop to the customer, please enter 10");
-        System.out.println("If You want to delete a customer, please enter 11");
-        System.out.println("If You want to delete a shop, please enter 12");
-        System.out.println("If You want to close application, please enter 13");
+        System.out.println("If You want to delete a customer, please enter 10");
+        System.out.println("If You want to delete a shop, please enter 11");
+        System.out.println("If You want to close application, please enter 12");
     }
 
     private void crud(BufferedReader reader, String input) throws IOException {
@@ -75,24 +73,19 @@ public class СustomerController {
                 attachCustomerToShop(reader);
                 break;
             case "10":
-                attachShopToCustomer(reader);
-                break;
-            case "11":
                 deleteCustomer(reader);
                 break;
-            case "12":
+            case "11":
                 deleteShop(reader);
                 break;
-            case "13":
+            case "12":
                 exit();
                 break;
-            default:
-                System.out.println("Something went wrong... Try again please");
         }
     }
 
     private void createCustomer(BufferedReader reader) throws IOException {
-        System.out.println("Let's create a new сustomer.");
+        System.out.println("Create a new customer.");
         System.out.println("Please enter сustomer's name:");
         String Name = reader.readLine();
         System.out.println("Please enter сustomer's phone:");
@@ -101,11 +94,10 @@ public class СustomerController {
         сustomer.setName(Name);
         сustomer.setPhone(phone);
         сustomerService.create(сustomer);
-        System.out.println("New сustomer is created. His/her ID is " + сustomer.getId());
     }
 
     private void createShop(BufferedReader reader) throws IOException {
-        System.out.println("Let's create a new shop.");
+        System.out.println("Create a new shop.");
         System.out.println("Please enter shop's name:");
         String shopName = reader.readLine();
         System.out.println("Please enter shop's country:");
@@ -114,11 +106,10 @@ public class СustomerController {
         shop.setShopName(shopName);
         shop.setCountry(country);
         shopService.create(shop);
-        System.out.println("New shop is created. It's ID is " + shop.getId());
     }
 
     private void findCustomer(BufferedReader reader) throws IOException {
-        System.out.println("To find the сustomer please enter сustomer's ID:");
+        System.out.println("To find the сustomer please enter ID:");
         String customerId = reader.readLine();
         Сustomer сustomer = сustomerService.findById(customerId);
         if (сustomer == null) {
@@ -129,7 +120,7 @@ public class СustomerController {
     }
 
     private void findShop(BufferedReader reader) throws IOException {
-        System.out.println("To find the shop please enter shop's ID:");
+        System.out.println("To find the shop please enter ID:");
         String shopId = reader.readLine();
         Shop shop = shopService.findShopById(shopId);
         if (shop == null) {
@@ -195,14 +186,7 @@ public class СustomerController {
         System.out.println("Then please enter shop's ID:");
         String shopId = reader.readLine();
         сustomerService.attach(customerId, shopId);
-    }
 
-    private void attachShopToCustomer(BufferedReader reader) throws IOException {
-        System.out.println("Let's attach the shop to customer. To start, please enter shop's ID:");
-        String shopId = reader.readLine();
-        System.out.println("Then please enter customer's ID:");
-        String customerId = reader.readLine();
-        shopService.attach(customerId, shopId);
     }
 
     private void deleteCustomer(BufferedReader reader) throws IOException {

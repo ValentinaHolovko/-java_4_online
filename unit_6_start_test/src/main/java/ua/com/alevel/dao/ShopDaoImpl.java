@@ -1,6 +1,8 @@
 package ua.com.alevel.dao;
+
 import ua.com.alevel.db.DbStorage;
 import ua.com.alevel.entity.Shop;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +32,9 @@ public class ShopDaoImpl implements ShopDao {
     }
 
     @Override
-    public List<Shop> findAll() { return dbStorage.findAllShops(); }
+    public List<Shop> findAll() {
+        return dbStorage.findAllShops();
+    }
 
     @Override
     public void attach(String customerId, String shopId) {

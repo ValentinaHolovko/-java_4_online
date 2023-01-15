@@ -8,7 +8,7 @@ public class ShopServiceTest {
 
     private static final ShopService service = new ShopService();
     private static final int SIZE = 30;
-    private static final String SHOOP_NAME = "test shoop name";
+    private static final String SHOP_NAME = "test shoop name";
     private static final String COUNTRY = "test country";
     @BeforeAll
     public static void setUp() {
@@ -16,9 +16,10 @@ public class ShopServiceTest {
         for (int i = 0; i < SIZE; i++)
             service.create(newShop(i));
     }
+
     @Test
     @Order(1)
-    public void checkShopSizesAfterUpgrading() {
+    public void checkShopAfterUpgrading() {
         Assertions.assertEquals(service.findAllShop().size(), SIZE);
     }
     @Test
@@ -42,7 +43,7 @@ public class ShopServiceTest {
 
     private static Shop newShop(int i) {
         Shop shop = new Shop();
-        shop.setShopName(SHOOP_NAME + " " + i);
+        shop.setShopName(SHOP_NAME + " " + i);
         shop.setCountry(COUNTRY  + " " + i);
         return shop;
     }

@@ -31,12 +31,4 @@ public class ShopService {
         return shopDao.findAll();
     }
 
-    public void attach(String сustomerId, String shopId) {
-        if (сustomerId == null || shopId == null) {
-            System.out.println("This ID does not exist.");
-        } else {
-            shopDao.attach(сustomerId, shopId);
-            System.out.println("Attachment is successful.");
-        }
     }
-}

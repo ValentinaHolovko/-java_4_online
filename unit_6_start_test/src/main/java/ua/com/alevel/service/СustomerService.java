@@ -11,7 +11,7 @@ public class СustomerService {
     private СustomerDaoImpl customerDao = new СustomerDaoImpl();
 
     public String create(Сustomer сustomer) {
-        if(!validateName(сustomer.getName()) || !validateName(сustomer.getPhone())) {
+        if (!validateName(сustomer.getName()) || !validatePhone(сustomer.getPhone())) {
             System.out.println("Incorrect information. Name can't contain numbers.");
             return null;
         }
@@ -19,8 +19,8 @@ public class СustomerService {
     }
 
     public void update(Сustomer сustomer) {
-        if(!validatePhone(сustomer.getName()) || !validatePhone(сustomer.getPhone())) {
-            System.out.println("Incorrect information. Phone can't contain numbers.");
+        if (!validateName(сustomer.getName()) || !validatePhone(сustomer.getPhone())) {
+            System.out.println("Wrong information. The phone number must contain only numbers.");
             return;
         }
         customerDao.update(сustomer);
@@ -44,7 +44,7 @@ public class СustomerService {
             System.out.println("This ID does not exist.");
         } else {
             customerDao.attach(сustomerId, shopId);
-            System.out.println("Attachment is successful.");
+            System.out.println("Successfully attached.");
         }
     }
 
@@ -52,7 +52,6 @@ public class СustomerService {
         return name.matches("[A-Za-z]+");
     }
 
-    private boolean validatePhone(String phone){
-        return phone.matches("[0-9]+");
+    private boolean validatePhone(String phone) { return phone.matches("^(\\+3)([0-9]{10})$");
     }
 }

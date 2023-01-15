@@ -5,16 +5,16 @@ import java.util.Set;
 
 public class Сustomer extends BaseEntity {
 
-    private String Name;
+    private String name;
     private String phone;
     private Set<String> shopIdList = new HashSet<>();
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPhone() {
@@ -36,7 +36,7 @@ public class Сustomer extends BaseEntity {
     @Override
     public String toString() {
         return "Сustomer{" +
-                "Name='" + Name + '\'' +
+                "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 "id='" + getId() + '\'' +
                 ", shopIdList=" + shopIdList +

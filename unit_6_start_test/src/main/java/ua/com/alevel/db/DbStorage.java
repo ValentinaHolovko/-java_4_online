@@ -1,4 +1,5 @@
 package ua.com.alevel.db;
+
 import ua.com.alevel.entity.Shop;
 import ua.com.alevel.entity.Сustomer;
 
@@ -10,7 +11,7 @@ public class DbStorage {
     private Set<Shop> shops = new HashSet<>();
     private static DbStorage instance;
 
-    private DbStorage() {
+    DbStorage() {
     }
 
     public static DbStorage getInstance() {
@@ -79,20 +80,12 @@ public class DbStorage {
 
     public void attach(String customerId, String shopId) {
         attachCustomerToShop(customerId, shopId);
-        attachShopToCustomer(customerId, shopId);
     }
 
     private void attachCustomerToShop(String customerId, String shopId) {
         getShop(shopId).ifPresent(it -> {
             Set<String> customers = it.getCustomerIdList();
             customers.add(customerId);
-        });
-    }
-
-    private void attachShopToCustomer(String customerId, String shopId) {
-        getCustomer(customerId).ifPresent(it -> {
-            Set<String> shops = it.getShopIdList();
-            shops.add(shopId);
         });
     }
 
@@ -125,6 +118,4 @@ public class DbStorage {
             customer.getShopIdList().removeIf(shop -> id.equals(shop));
         });
     }
-
-
 }
