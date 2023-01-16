@@ -3,16 +3,18 @@ package ua.com.alevel.db;
 import ua.com.alevel.entity.Shop;
 import ua.com.alevel.entity.Сustomer;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 public class DbStorage {
 
-    private Set<Сustomer> сustomers = new HashSet<>();
-    private Set<Shop> shops = new HashSet<>();
+    private List<Сustomer> сustomers = new ArrayList<>();
+    private List<Shop> shops = new ArrayList<>();
     private static DbStorage instance;
 
-    DbStorage() {
-    }
+
 
     public static DbStorage getInstance() {
         if (instance == null) {
@@ -22,8 +24,8 @@ public class DbStorage {
     }
 
     public void clean() {
-        сustomers = new HashSet<>();
-        shops = new HashSet<>();
+        сustomers = new ArrayList<>();
+        shops = new ArrayList<>();
     }
 
     private String generateСustomerId() {
@@ -85,14 +87,14 @@ public class DbStorage {
 
     private void attachCustomerToShop(String customerId, String shopId) {
         getShop(shopId).ifPresent(it -> {
-            Set<String> customers = it.getCustomerIdList();
+            List<String> customers = (List<String>) it.getCustomerIdList();
             customers.add(customerId);
         });
     }
 
     private void attachShopToCustomer(String customerId, String shopId) {
         getCustomer(customerId).ifPresent(it -> {
-            Set<String> shops = it.getShopIdList();
+            List<String> shops = (List<String>) it.getShopIdList();
             shops.add(shopId);
         });
     }
@@ -107,11 +109,13 @@ public class DbStorage {
         shops.add(shop);
     }
 
-    public void deleteCustomer(String id) {
+    public void deleteCustomer(String id)
+    {
         сustomers.removeIf(customer -> customer.getId().equals(id));
     }
 
     public void deleteShop(String id) {
+
         shops.removeIf(shop -> shop.getId().equals(id));
     }
 
@@ -128,4 +132,9 @@ public class DbStorage {
     }
 
 
+    public void createСustomer(Сustomer customer) {
+    }
+
+    public void createShop(Shop shop) {
+    }
 }

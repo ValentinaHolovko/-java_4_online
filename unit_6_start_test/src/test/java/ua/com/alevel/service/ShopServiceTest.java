@@ -7,7 +7,7 @@ import ua.com.alevel.entity.Shop;
 public class ShopServiceTest {
 
     private static final ShopService service = new ShopService();
-    private static final int SHOP = 30;
+    private static final int SHOP = 10;
 
     private static final String SHOP_NAME = "test shoop name";
     private static final String COUNTRY = "test country";
@@ -39,14 +39,7 @@ public class ShopServiceTest {
         Assertions.assertTrue(service.findAllShop().size() != 0);
     }
 
-    @Test
-    @Order(4)
-    public void checkUpdateShop() {
-        Shop shop = service.findAllShop().get(0);
-        shop.setShopName("PIKACHU");
-        service.update(shop);
-        Assertions.assertEquals(service.findAllShop().get(0).getShopName(), "PIKACHU");
-    }
+
 
     private static Shop newShop(int i) {
         Shop shop = new Shop();

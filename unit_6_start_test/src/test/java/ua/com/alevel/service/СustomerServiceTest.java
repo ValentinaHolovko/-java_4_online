@@ -1,11 +1,15 @@
 package ua.com.alevel.service;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import ua.com.alevel.entity.Сustomer;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class СustomerServiceTest {
 
+    private static final int SIZE = 10;
     private static final СustomerService сustomerService = new СustomerService();
 
     private static final String NAME = "test Name";
@@ -20,7 +24,7 @@ public class СustomerServiceTest {
 
     @Test
     public void testValidationPhone() {
-        String id = сustomerService.createPhone(Customer(PHONE, "^(\\+3)([0-9]{10})$"));
+        String id = сustomerService.createPhone(Customer(PHONE, "^(\\+3)([80-9]{11})$"));
         Assertions.assertNull(id);
     }
 

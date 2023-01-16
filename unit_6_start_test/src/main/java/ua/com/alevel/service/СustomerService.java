@@ -20,7 +20,7 @@ public class СustomerService {
 
     public String createPhone(Сustomer сustomer) {
         if (!validatePhone(сustomer.getPhone())) {
-            System.out.println("Wrong information. The phone number must contain only numbers.");
+            System.out.println("Wrong information. The phone number must start with +380xxxxxxxxx.");
             return null;
         }
         return customerDao.create(сustomer);
@@ -36,7 +36,7 @@ public class СustomerService {
 
     public void updatePhone(Сustomer сustomer) {
         if (!validatePhone(сustomer.getPhone())) {
-            System.out.println("Wrong information. The phone number must contain only numbers.");
+            System.out.println("Wrong information. The phone number must start with +380xxxxxxxxx.");
             return;
         }
         customerDao.update(сustomer);
@@ -78,6 +78,6 @@ public class СustomerService {
     }
 
     private boolean validatePhone(String phone) {
-        return phone.matches("^(\\+3)([0-9]{10})$");
+        return phone.matches("^(\\+3)([80-9]{11})$");
     }
 }
