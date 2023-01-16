@@ -5,6 +5,7 @@ import ua.com.alevel.entity.Shop;
 import ua.com.alevel.entity.Сustomer;
 
 import java.util.Optional;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DbStorageTest {
     private static final int SIZE = 10;
@@ -17,6 +18,7 @@ public class DbStorageTest {
 
     private String defaultСustomerId;
     private String defaultShopId;
+
     @BeforeAll
     private static void setUpСustomer() {
         for (int i = 0; i < SIZE; i++) {
@@ -74,6 +76,7 @@ public class DbStorageTest {
         dbStorage.createСustomer(customer);
         Assertions.assertNotEquals(dbStorage.findAllCustomers().size(), SIZE + 1);
     }
+
     @Test
     @Order(5)
     public void testDeleteShop() {
@@ -85,6 +88,7 @@ public class DbStorageTest {
 
         Optional<Сustomer> customer = dbStorage.getCustomer(defaultСustomerId);
     }
+
     @Test
     @Order(6)
     public void testDeleteClient() {
@@ -95,7 +99,7 @@ public class DbStorageTest {
         Assertions.assertFalse(customer.isPresent());
 
         Optional<Shop> shop = dbStorage.getShop(defaultShopId);
-        
+
 
     }
 }

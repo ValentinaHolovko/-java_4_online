@@ -15,7 +15,6 @@ public class DbStorage {
     private static DbStorage instance;
 
 
-
     public static DbStorage getInstance() {
         if (instance == null) {
             instance = new DbStorage();
@@ -109,8 +108,7 @@ public class DbStorage {
         shops.add(shop);
     }
 
-    public void deleteCustomer(String id)
-    {
+    public void deleteCustomer(String id) {
         сustomers.removeIf(customer -> customer.getId().equals(id));
     }
 

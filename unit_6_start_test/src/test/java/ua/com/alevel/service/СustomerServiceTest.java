@@ -9,7 +9,6 @@ import ua.com.alevel.entity.Сustomer;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class СustomerServiceTest {
 
-    private static final int SIZE = 10;
     private static final СustomerService сustomerService = new СustomerService();
 
     private static final String NAME = "test Name";

@@ -40,7 +40,6 @@ public class ShopServiceTest {
     }
 
 
-
     private static Shop newShop(int i) {
         Shop shop = new Shop();
         shop.setShopName(SHOP_NAME + " " + i);
