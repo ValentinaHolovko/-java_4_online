@@ -12,8 +12,8 @@ public class Product extends BaseEntity {
         return productIdList;
     }
 
-    public void setProductIdList(String[] carIdList) {
-        this.productIdList = carIdList;
+    public void setProductIdList(String[] productIdList) {
+        this.productIdList = productIdList;
     }
 
     public String getProductName() {
@@ -59,6 +59,3 @@ public class Product extends BaseEntity {
                 '}';
     }
 }
-
-
-
