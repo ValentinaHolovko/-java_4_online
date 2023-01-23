@@ -1,13 +1,23 @@
 package ua.com.alevel.entity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Shop extends BaseEntity {
-
+    private Set<String> shopIdList = new HashSet<>();
     private String shopName;
     private String country;
-    private Set<String> customerIdList = new HashSet<>();
+
+    public Set<String> getShopIdList() {
+        return shopIdList;
+    }
+
+    public void setShopIdList(Set<String> shopIdList) {
+        this.shopIdList = shopIdList;
+    }
 
     public String getShopName() {
         return shopName;
@@ -25,21 +35,13 @@ public class Shop extends BaseEntity {
         this.country = country;
     }
 
-    public Set<String> getCustomerIdList() {
-        return customerIdList;
-    }
-
-    public void setCustomerIdList(Set<String> customerIdList) {
-        this.customerIdList = customerIdList;
-    }
-
     @Override
     public String toString() {
         return "Shop{" +
-                "shopName='" + shopName + '\'' +
+                ", shopIdList=" + shopIdList +
+                ", shopName='" + shopName + '\'' +
                 ", country='" + country + '\'' +
                 ", id='" + getId() + '\'' +
-                ", customerIdList=" + customerIdList +
                 '}';
     }
 }
