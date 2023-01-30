@@ -42,11 +42,9 @@ public class DbStorage {
         return new ArrayList<>(shops);
     }
 
-
     public List<Product> findAllProduct() {
         return new ArrayList<>(products);
     }
-
 
     public Optional<Shop> getShop(String id) {
         return shops
@@ -54,7 +52,6 @@ public class DbStorage {
                 .filter(shop -> shop.getId().equals(id))
                 .findFirst();
     }
-
 
     public Optional<Product> getProduct(String id) {
         return products
@@ -84,24 +81,18 @@ public class DbStorage {
         shops.removeIf(shop -> shop.getId().equals(id));
     }
 
-
     public void deleteProduct(String id) {
         products.stream().map(Product::getProductIdList).forEach(product -> product.remove(id));
         products.removeIf(product -> product.getId().equals(id));
     }
-
 
     public void updateShop(Shop shop) {
         shops.remove(shop);
         shops.add(shop);
     }
 
-
     public void updateProduct(Product product) {
         products.remove(product);
         products.add(product);
     }
-
-
 }
-

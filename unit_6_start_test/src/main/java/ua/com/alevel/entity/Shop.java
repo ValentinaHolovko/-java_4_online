@@ -1,12 +1,10 @@
 package ua.com.alevel.entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Shop extends BaseEntity {
+
     private Set<String> shopIdList = new HashSet<>();
     private String shopName;
     private String country;

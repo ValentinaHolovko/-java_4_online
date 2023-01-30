@@ -8,18 +8,17 @@ import java.util.List;
 import java.util.Optional;
 
 public class ProductShopDao1 implements ProductShopDao {
+
     DbStorage dbStorage = DbStorage.getInstance();
 
     @Override
     public void createShop(Shop shop) {
         dbStorage.addShop(shop);
-
     }
 
     @Override
     public void createProduct(Product product) {
         dbStorage.addProduct(product);
-
     }
 
     @Override
@@ -30,13 +29,11 @@ public class ProductShopDao1 implements ProductShopDao {
     @Override
     public void updateProduct(Product product) {
         dbStorage.updateProduct(product);
-
     }
 
     @Override
     public void deleteShop(String id) {
         dbStorage.deleteShop(id);
-
     }
 
     @Override
