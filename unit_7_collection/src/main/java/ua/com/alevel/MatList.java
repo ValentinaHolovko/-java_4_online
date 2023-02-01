@@ -5,7 +5,7 @@ import java.util.*;
 public final class MatList<E extends Number> implements List<E> {
     private static final int SIZE = 100;
     public int size;
-    private Number[] array = new Number[10];
+    private Number[] array = new Number[100];
 
     public MatList() {
         this.array = new Number[SIZE];
@@ -255,14 +255,14 @@ public final class MatList<E extends Number> implements List<E> {
     }
 
     private class MatListIterator implements Iterator<E> {
-        int current = 0;
+        int sylla = 0;
 
         public boolean hasNext() {
-            return current < size;
+            return sylla < size;
         }
 
         public E next() {
-            return (E) array[current++];
+            return (E) array[size++];
         }
     }
 
