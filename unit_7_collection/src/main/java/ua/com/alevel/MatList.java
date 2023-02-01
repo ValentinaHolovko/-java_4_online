@@ -79,13 +79,13 @@ public final class MatList<E extends Number> implements List<E> {
     }
 
     @Override
-    public <T> T[] toArray(T[] a) {
+    public <E> E[] toArray(E[] a) {
         if (a.length < size) {
-            return (T[]) Arrays.copyOf(array, size, a.getClass());
+            return (E[]) Arrays.copyOf(array, size, a.getClass());
         }
         System.arraycopy(array, 0, a, 0, size);
         if (a.length > size) {
-            a[size] = (T) array;
+            a[size] = (E) array;
         }
         return a;
     }
