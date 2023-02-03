@@ -11,12 +11,12 @@ public final class MatList<E extends Number> implements List<E> {
         this.array = new Number[SIZE];
     }
 
-    public MatList(E[]... numbers) {
-        for (E[] array : numbers) {
+    public MatList(E[]... number) {
+        for (E[] array : number) {
             size += array.length;
         }
         this.array = new Number[SIZE];
-        for (E[] array : numbers) {
+        for (E[] array : number) {
             for (E e : array) {
             }
         }
