@@ -101,10 +101,10 @@ public class Dictionary<K, V> {
 
     @Override
     public String toString() {
-        return "Dictionary{" +
+        return "Dictionary-" +
                 "twoArrayList=" + twoArrayList +
                 ", size=" + size +
-                '}';
+                ':';
     }
 
     private class Two<K, V> {
