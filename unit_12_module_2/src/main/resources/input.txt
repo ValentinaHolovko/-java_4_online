@@ -1,0 +1,12 @@
+10
+Lviv 0 1 2 0 0 0 0 0 0 0
+Kyiv 1 0 3 0 0 0 0 0 0 0
+Odessa 2 3 0 4 0 0 0 0 0 0
+Dnipro 0 0 4 0 5 0 0 0 0 0
+Kharkiv 0 0 0 5 0 6 0 0 0 0
+Zaporizhzhia 0 0 0 0 6 0 7 0 0 0
+Poltava 0 0 0 0 0 7 0 8 0 0
+Vinnytsia 0 0 0 0 0 0 8 0 9 0
+Chernivtsi 0 0 0 0 0 0 0 9 0 10
+Ivano-Frankivsk 0 0 0 0 0 0 0 0 10 0
+Lviv Vinnytsia
