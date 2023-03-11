@@ -26,8 +26,7 @@ public class ConsoleTable {
                     .map(String::toLowerCase)
                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-            int totalWords = countWords.values().stream().mapToInt(value -> Math.toIntExact(value)).sum();
-
+            int totalWords = countWords.values().stream().mapToInt(Math::toIntExact).sum();
 
             int rating = 1;
 
@@ -37,7 +36,7 @@ public class ConsoleTable {
 
             for (Map.Entry<String, Long> entry : countWords.entrySet().stream()
                     .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    .collect(Collectors.toList())) {
+                    .toList()) {
                 String word = entry.getKey();
                 long count = entry.getValue();
                 double percent = count * 100.0 / (double) totalWords;
