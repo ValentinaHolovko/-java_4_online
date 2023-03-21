@@ -68,11 +68,6 @@ public class CustomCalendar {
         calendar.add(Calendar.MILLISECOND, date.calendar.get(Calendar.MILLISECOND));
     }
 
-    public void addDate(String format) {
-        CustomCalendar date = new CustomCalendar(format);
-        addDate(date);
-    }
-
     public void addYears(int years) {
         calendar.add(Calendar.YEAR, years);
     }

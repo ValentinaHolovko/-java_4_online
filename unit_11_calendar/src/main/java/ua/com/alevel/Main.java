@@ -8,6 +8,5 @@ public class Main {
 
         CalendarController calendarController = new CalendarController();
         calendarController.start();
-
     }
 }
