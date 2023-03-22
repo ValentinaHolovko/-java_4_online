@@ -12,17 +12,12 @@ public class ProductShopService {
 
     private final ProductShopDao productShopDao = new ProductShopDao1();
 
-    public ProductShopService() {
-    }
-
-
     public void updateShop(String shopId, String shopName) {
-        productShopDao.updateShop(shopId, shopName);
+        productShopDao.updateShop(shopId, shopName); // а что этот метод делает?, если ты его не используешь?
     }
-
 
     public void updateProduct(String productId, String productName) {
-        productShopDao.updateProduct(productId, productName);
+        productShopDao.updateProduct(productId, productName); // а что этот метод делает?, если ты его не используешь?
     }
 
     public void addShop(Shop shop) {
@@ -57,19 +52,19 @@ public class ProductShopService {
         productShopDao.deleteProduct(productId);
     }
 
-    public void updateProduct(Product product) {
+    public void updateProduct(Product product) { // а что этот метод делает?
     }
 
-    public void updateShop(Shop shop) {
+    public void updateShop(Shop shop) { // а что этот метод делает?
     }
 
     public Shop findShopById(String shopId) {
         productShopDao.findShopById(shopId);
-        return null;
+        return null; // return null ???)))
     }
 
     public Product findProductById(String productId) {
         productShopDao.findProductById(productId);
-        return null;
+        return null; // return null ???)))
     }
 }

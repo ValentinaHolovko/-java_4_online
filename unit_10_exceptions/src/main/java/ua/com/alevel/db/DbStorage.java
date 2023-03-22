@@ -250,9 +250,7 @@ public class DbStorage {
         return readShops();
     }
 
-
     public List<Product> findAllProducts() {
         return readProducts();
     }
-
 }

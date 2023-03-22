@@ -14,7 +14,7 @@ public class ProductShopController {
 
     private final ProductShopService productShopService = new ProductShopService();
 
-    public ProductShopController() throws IOException {
+    public ProductShopController() throws IOException { // а зачем этот конструктор?
     }
 
     public void start() throws IOException {
@@ -44,40 +44,18 @@ public class ProductShopController {
     }
 
     private void crud(BufferedReader reader, String select) throws IOException {
-        switch (select) {
-            case "1":
-                createProduct(reader);
-                break;
-            case "2":
-                createShop(reader);
-                break;
-            case "3":
-                findProductById(reader);
-                break;
-            case "4":
-                findShopById(reader);
-                break;
-            case "5":
-                updateProduct(reader);
-                break;
-            case "6":
-                updateShop(reader);
-                break;
-            case "7":
-                deleteProduct(reader);
-                break;
-            case "8":
-                deleteShop(reader);
-                break;
-            case "9":
-                findAllProducts();
-                break;
-            case "10":
-                findAllShops();
-                break;
-            case "11":
-                exit();
-                break;
+        switch (select) { // лучше уже используй фишки 17 java
+            case "1" -> createProduct(reader);
+            case "2" -> createShop(reader);
+            case "3" -> findProductById(reader);
+            case "4" -> findShopById(reader);
+            case "5" -> updateProduct(reader);
+            case "6" -> updateShop(reader);
+            case "7" -> deleteProduct(reader);
+            case "8" -> deleteShop(reader);
+            case "9" -> findAllProducts();
+            case "10" -> findAllShops();
+            case "11" -> exit();
         }
         menu();
     }
@@ -176,7 +154,6 @@ public class ProductShopController {
             shop.setShopIdList(Collections.singleton(shopIdList));
             productShopService.updateShop(shop);
         }
-
     }
 
 
@@ -224,5 +201,4 @@ public class ProductShopController {
     private void exit() {
         System.exit(0);
     }
-
 }

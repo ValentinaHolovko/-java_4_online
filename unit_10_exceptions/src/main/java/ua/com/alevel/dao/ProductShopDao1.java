@@ -8,10 +8,11 @@ import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
+// что за имя класса?)))
 public class ProductShopDao1 implements ProductShopDao {
 
-    private static final File SHOPS_FILE = new File("files/shops.csv");
-    private static final File PRODUCTS_FILE = new File("files/products.csv");
+    private static final File SHOPS_FILE = new File("files/shops.csv"); // зачем тебе неиспользуемый переменные?)
+    private static final File PRODUCTS_FILE = new File("files/products.csv"); // зачем тебе неиспользуемый переменные?)
 
     DbStorage dbStorage = DbStorage.getInstance();
 
@@ -75,20 +76,24 @@ public class ProductShopDao1 implements ProductShopDao {
         save();
     }
 
+    // а что этот метод делает?
     @Override
     public void findShopById(String shopId) {
 
     }
 
+    // а что этот метод делает?
     @Override
     public void findProductById(String productId) {
 
     }
 
+    // а что этот метод делает?
     private void save() {
         //...
     }
 
+    // а что этот метод делает?
     private void load() {
         //...
     }

@@ -52,7 +52,6 @@ public class Product extends BaseEntity {
                 ", id=" + getId() +
                 '}';
     }
-
 }
 
 
