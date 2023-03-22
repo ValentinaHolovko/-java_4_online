@@ -37,44 +37,19 @@ public class CalendarController {
             int choice = Integer.parseInt(br.readLine());
 
             switch (choice) {
-                case 1:
-                    displayCurrentDateAndTime();
-                    break;
-                case 2:
-                    addYearsToCurrentDate();
-                    break;
-                case 3:
-                    addMonthsToCurrentDate();
-                    break;
-                case 4:
-                    addDaysToCurrentDate();
-                    break;
-                case 5:
-                    addHoursToCurrentDate();
-                    break;
-                case 6:
-                    addMinutesToCurrentDate();
-                    break;
-                case 7:
-                    addSecondsToCurrentDate();
-                    break;
-                case 8:
-                    addMilliseconds();
-                    break;
-                case 9:
-                    subtractDate();
-                    break;
-                case 10:
-                    subtractDateInFormat();
-                    break;
-                case 11:
-                    formatCurrentDate();
-                    break;
-                case 12:
-                    exit = true;
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+                case 1 -> displayCurrentDateAndTime();
+                case 2 -> addYearsToCurrentDate();
+                case 3 -> addMonthsToCurrentDate();
+                case 4 -> addDaysToCurrentDate();
+                case 5 -> addHoursToCurrentDate();
+                case 6 -> addMinutesToCurrentDate();
+                case 7 -> addSecondsToCurrentDate();
+                case 8 -> addMilliseconds();
+                case 9 -> subtractDate();
+                case 10 -> subtractDateInFormat();
+                case 11 -> formatCurrentDate();
+                case 12 -> exit = true;
+                default -> System.out.println("Invalid choice. Please try again.");
             }
         }
     }
